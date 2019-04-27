@@ -1,0 +1,48 @@
+
+
+.navbar {
+    background-color: black;
+    height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+.dropbutton {
+    color: azure;
+    background-color: inherit;
+    border: none;
+    font-size: 1vw;
+    height: inherit;
+
+}
+
+.content {
+    position: absolute;
+    background-color: darksalmon;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+}
+
+.dropdown:hover{
+    background-color: cornflowerblue;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+a:hover {
+    background-color: blanchedalmond;
+}
