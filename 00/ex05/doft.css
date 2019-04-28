@@ -60,7 +60,16 @@ main {
 }
 
 /*left*/
-
+#visionRun {
+    display: none;
+}
+#run:hover #visionRun{
+    display: block;
+    position: relative;
+}
+.img_more {
+   cursor: pointer;
+}
 /*center*/
 #cluster {
     grid-row: 1/3;

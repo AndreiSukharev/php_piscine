@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="doft.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Day of the 42</title>
 </head>
 <body >
@@ -44,27 +45,29 @@
 
 <main>
 
-    <div align="center">
+    <div align="center" id="app">
 
         <div class="container main" >
 
 <!--            left container-->
             <div class="background_grey">
-                <img width="40%" alt="Advance" id="advance" src="resources/arrow.png">
+                <img class="img_more" width="40%" alt="Advance" @click="yourName()" src="resources/arrow.png">
                 <br>
-                <img width="40%" alt="Take" src="resources/main.png">
+                <img class="img_more" width="40%" alt="Take" @click="fingers()" src="resources/main.png">
                 <br>
-                <img width="40%" alt="Look" src="resources/oeil.png">
+                <div id="run">
+                    <img class="img_more" width="40%" alt="Look" src="resources/oeil.png">
+                    <img class="img_more" id="visionRun" width="40%" alt="Look" src="resources/run.jpg">
+                </div>
+                <img class="img_more" width="40%" alt="Use" @click="goAway" src="resources/outil.png">
                 <br>
-                <img width="40%" alt="Use" src="resources/outil.png">
-                <br>
-                <img width="40%" alt="Speak" src="resources/chat-icon.png">
+                <img class="img_more" width="40%" alt="Speak" @click="speak" src="resources/chat-icon.png">
             </div>
 
 <!--            center container-->
             <div class="background_grey" id="cluster">
                 <img style="padding-top: 5px" width="780" height="450" src="resources/cluster.jpg" usemap="#image-map">
-
+                <h1>{{stalker}}</h1>
                 <map name="image-map">
                     <area target="_blank" alt="ikea" title="Go to Ikea"  href="https://www.ikea.com" coords="300,310,50" shape="circle">
                     <area target="_blank" alt="apple" title="Go to Apple" href="https://www.apple.com" coords="680,310,80" shape="circle">
@@ -87,9 +90,11 @@
                 <p class="input_text"> <i>-Bonjour, vous êtes nouveau ici ?</i></p>
 
                 <form>
-                    <input type="text">
-                    <button>repondre</button>
+                    <input type="text" v-model="input_form">
+                    <button @click="showAlert()">repondre</button>
                 </form>
+
+                <p style="text-align: left">reversed input: {{reversed}}</p>
 
             </div>
 
@@ -99,5 +104,6 @@
 
 </main>
 
+<script src="vue.js"></script>
 </body>
 </html>
