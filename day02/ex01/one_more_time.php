@@ -26,7 +26,7 @@ $months = array(
 );
 
 function error(){
-    echo("Wrong Format");
+    echo("Wrong Format\n");
     exit();
 }
 

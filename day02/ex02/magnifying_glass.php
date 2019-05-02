@@ -29,4 +29,3 @@ $str = preg_replace_callback($pattern, 'myReplace', $page);
 echo($str);
 
 ?>
-

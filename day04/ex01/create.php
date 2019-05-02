@@ -34,5 +34,7 @@ $not_serialized_data[] = ['login' => $login, 'passwd' => $passwd];
 $serialized_data = serialize($not_serialized_data);
 file_put_contents($file, $serialized_data);
 echo "OK\n";
-//curl -d login=toto1 -d passwd=titi1 -d submit=OK "localhost:8000"
+
+//test
+//curl -d login=toto1 -d passwd=titi1 -d submit=OK "localhost:8080"
 ?>
