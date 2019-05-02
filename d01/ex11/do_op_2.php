@@ -2,12 +2,12 @@
 <?php
 
 function errors(){
-    echo "Incorrect Parameters";
+    echo "Incorrect Parameters\n";
     exit();
 }
 
 function syntax(){
-    echo "Syntax Error";
+    echo "Syntax Error\n";
     exit();
 }
 
@@ -67,10 +67,18 @@ switch ($sign){
         echo "$res";
         break;
     case "/":
+        if ($b === 0){
+            echo "0";
+            break;
+        }
         $res = $a / $b;
         echo "$res";
         break;
     case "%":
+        if ($b === 0){
+            echo "0";
+            break;
+        }
         $res = $a % $b;
         echo "$res";
         break;

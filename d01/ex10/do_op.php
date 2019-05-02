@@ -2,7 +2,7 @@
 <?php
 
 function errors(){
-    echo "Incorrect Parameters";
+    echo "Incorrect Parameters\n";
     exit();
 }
 

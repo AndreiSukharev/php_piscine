@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-if ($argc < 1)
+if ($argc < 2)
     exit();
 
 function ft_split($str){
