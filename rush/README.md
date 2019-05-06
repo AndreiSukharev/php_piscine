@@ -27,13 +27,7 @@ docker-machine ip Shop
 ## Build and Run
 
 ```
-docker-compose up
+sh deploy.sh
 ```
 
 Open phpmyadmin at http://localhost:8000 Open web browser to look at a simple php example at http://localhost:8001
-
-Run mysql client:
-
-```
-docker-compose exec db mysql -u root -p
-```
