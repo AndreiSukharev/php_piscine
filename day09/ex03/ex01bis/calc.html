@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+
+<!--    css-->
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+        div {
+            text-align: center;
+            margin-top: 400px;
+        }
+        form {
+
+        }
+    </style>
+
+<!--    javaScript-->
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous">
+    </script>
+
+    <script>
+
+
+        $(document).ready(function(){
+
+            first_arg = $('#first');
+            sign_arg = $('#select');
+            second_arg = $('#second');
+            btn = $('#btn');
+            btn.click(solve);
+            setInterval(remember, 30000);
+        });
+
+
+        function remember(){
+            alert("Please, use me...")
+        }
+
+
+        function error_zero() {
+            console.log("It’s over 9000!");
+            alert("It’s over 9000!");
+        }
+
+        function check_numbers(first, second) {
+            if (first < 0 || second < 0){
+                console.log("Error :(");
+                alert("Error :(");
+                return 0;
+            }
+            return 1;
+        }
+
+        function solve() {
+
+            let res;
+            let first = Number(first_arg.val());
+            let second = Number(second_arg.val());
+            let sign = sign_arg.val();
+            let check = check_numbers(first, second);
+            if (!check)
+                return ;
+            switch (sign) {
+                case "plus":
+                    res = first + second;
+                    break;
+                case "minus":
+                    res = first - second;
+                    break;
+                case "mult":
+                    res = first * second;
+                    break;
+                case "division":
+                    if (second === 0){
+                        error_zero();
+                        break;
+                    }
+                    res = first / second;
+                    break;
+                case "module":
+                    if (second === 0){
+                        error_zero();
+                        break;
+                    }
+                    res = first % second;
+                    break;
+            }
+            if (res || res === 0){
+                console.log(res);
+                alert(res);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div>
+    <form id="form1">
+        <H3>Calculator</H3>
+        <input type="number" id="first" value="">
+        <br>
+        <select id="select">
+            <option disabled>Choose action</option>
+            <option value="plus"> + </option>
+            <option value="minus"> - </option>
+            <option value="mult"> * </option>
+            <option value="division"> / </option>
+            <option value="module"> % </option>
+        </select>
+        <br>
+        <input type="number" id="second" value="">
+        <br>
+        <button type='button' id="btn">Try me!</button>
+
+    </form>
+</div>
+
+
+
+
+
+</body>
+
+</html>

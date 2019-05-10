@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ballon</title>
+    <style>
+        #balloon {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="balloon" style="width: 200px; height: 200px; background-color: red;" onclick="wider()" onmouseleave="smaller()">
+
+</div>
+
+<script>
+
+    function change_colour_click(colour) {
+        switch (colour) {
+            case "red":
+                return "green";
+            case "green":
+                return "blue";
+            default:
+                return "red";
+        }
+    }
+
+    function change_colour_mouse(colour) {
+        switch (colour) {
+            case "green":
+                return "red";
+            case "blue":
+                return "green";
+            default:
+                return "blue";
+        }
+    }
+
+    function wider() {
+       let balloon = document.getElementById('balloon');
+       let width = parseInt(balloon.style.width);
+       let height = parseInt(balloon.style.height);
+       if (width <= 420){
+           width += 10;
+           height += 10;
+           balloon.style.width = `${width}px`;
+           balloon.style.height = `${height}px`;
+           balloon.style.backgroundColor = change_colour_click(balloon.style.backgroundColor);
+       }
+       else{
+           balloon.style.width = "200px";
+           balloon.style.height = "200px";
+       }
+    }
+
+    function smaller() {
+        let balloon = document.getElementById('balloon');
+        let width = parseInt(balloon.style.width);
+        let height = parseInt(balloon.style.height);
+        if (width >= 200){
+            width -= 5;
+            height -= 5;
+            balloon.style.width = `${width}px`;
+            balloon.style.height = `${height}px`;
+        }
+        balloon.style.backgroundColor = change_colour_mouse(balloon.style.backgroundColor);
+    }
+
+</script>
+</body>
+</html>
